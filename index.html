@@ -5,22 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Omobolaji&apos;s Javascript</title>
+    
     <!-- <script src="variables.js" defer></script> -->
     <!-- <script src="functions.js" defer></script> -->
-    <!-- <script src="objects.js" defer></script> -->
-    <script src="this.js" defer></script>
+    <script src="objects.js" defer></script>
+    <!-- <script src="objects2.js" defer></script> -->
+    <!-- <script src="this.js" defer></script> -->
     <!-- <script src="params.js"'></script> -->
     <!-- <script src="scope.js"'></script> -->
+    
     <style>
       body {
         padding: 20px;
         background-color: beige;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .header {
+        text-align: center;
+        border: 1px solid green;
+        padding: 10px;
+      }
+      .text {
+        text-align: center;
+        border: 1px solid green;
+        padding: 10px;
+        margin: 10px 0px;
+      }
+      .form {
+        margin: 0px 10px;
+        padding: 10px;
+        max-width: 200px;
+
+      }
+      .element {
+        display: block;
+        width: 100%;
+        border: 1px green solid;
+      }
+      .select {
+        margin: 10px 0px;
       }
     </style>
   </head>
 
   <body>
-    <h1>Omobolaji&apos;s Javascript</h1>
+    <h1 class="header">Omobolaji&apos;s Javascript</h1>
     <div id="text"></div>
+    <div class="form">
+      <input class="element" type="text" id="title" />
+      <select class="element select"  id="id">
+        <option value="5">Five (5)</option>
+        <option value="6" selected>Six (6)</option>
+        <option value="7">Seven (7)</option>
+      </select>
+      <button type="button" id="save" class="element">Save</button>
+    </div>
   </body>
 </html>
