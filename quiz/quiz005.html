@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Quiz 005</title>
+    <script defer>
+        console.log('\n********** QUIZ 0005 **********\n\n');
+
+        // Create a "greet" function that prints "this"."greeting"
+        function greet() {
+            return this.greeting;
+        }
+        greet.greeting = 'Hi';
+        greet.greet = greet;
+
+        // Create a greet object.
+        const greet0 = {
+            greeting: 'Hey',
+            greet: function () {
+                return this.greeting;
+            }
+        };
+
+        // Create a greet object.
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+        const greet1 = Object.create(greet0);
+        greet1.greeting = 'Yo';
+
+        // Create a greet object.
+        const greet2 = {
+            greeting: 'Sup?'
+        }
+
+        // Create a Greet constructor function.
+        function Greet(greeting) { this.greeting = greeting; }
+        Greet.prototype.greeting = 'Howdy';
+        Greet.greeting = 'Hello';
+        Greet.prototype.greet = function () {
+            return this.greeting;
+        };
+        Greet.greet = function () {
+            return this.greeting;
+        };
+
+        // QUESTION: What will be the values of these variables.
+        const greet01 = greet;
+        const greet02 = greet();
+        const greet03 = greet('Bonjour');
+        const greet04 = greet.greet;
+        const greet05 = greet.greet();
+        const greet06 = greet.greet('Ça va');
+
+        const greet11 = greet0;
+        const greet12 = greet0.greet('Bonsoir');
+        const greet13 = greet1;
+        const greet14 = greet1.greet('Bonne nuit');
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+        const greet21 = greet.call(greet2, 'Morning');
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+        const greet22 = greet.bind(greet2);
+        const greet23 = greet22('Afternoon');
+
+        const greet31 = Greet;
+        const greet32 = Greet.greet;
+        const greet33 = Greet.greet();
+        const greet34 = Greet.greet('Avengers Assemble');
+        const greet35 = Greet('I am Iron Man');
+        const greet36 = new Greet('I am inevitable');
+        const greet37 = new Greet('I am inevitable').greet;
+        const greet38 = new Greet('I am inevitable').greet();
+        const greet39 = new Greet('I am inevitable').greet('On your left');
+
+        // Write the answers to the following comments before uncommenting and running the code below.
+        // The value of greet01 is
+        // The value of greet02 is
+        // The value of greet03 is
+        // The value of greet04 is
+        // The value of greet05 is
+        // The value of greet06 is
+        //
+        // The value of greet11 is
+        // The value of greet12 is
+        // The value of greet13 is
+        // The value of greet14 is
+        //
+        // The value of greet21 is
+        // The value of greet22 is
+        // The value of greet23 is
+        //
+        // The value of greet31 is
+        // The value of greet32 is
+        // The value of greet33 is
+        // The value of greet34 is
+        // The value of greet35 is
+        // The value of greet36 is
+        // The value of greet37 is
+        // The value of greet38 is
+        // The value of greet39 is
+
+        // console.log('The value of greet01 is', greet01);
+        // console.log('The value of greet02 is', greet02);
+        // console.log('The value of greet03 is', greet03);
+        // console.log('The value of greet04 is', greet04);
+        // console.log('The value of greet05 is', greet05);
+        // console.log('The value of greet06 is', greet06);
+        // console.log('\n\n');
+        // console.log('The value of greet11 is', greet11);
+        // console.log('The value of greet12 is', greet12);
+        // console.log('The value of greet13 is', greet13);
+        // console.log('The value of greet14 is', greet14);
+        // console.log('\n\n');
+        // console.log('The value of greet21 is', greet21);
+        // console.log('The value of greet22 is', greet22);
+        // console.log('The value of greet23 is', greet23);
+        // console.log('\n\n');
+        // console.log('The value of greet31 is', greet31);
+        // console.log('The value of greet32 is', greet32);
+        // console.log('The value of greet33 is', greet33);
+        // console.log('The value of greet34 is', greet34);
+        // console.log('The value of greet35 is', greet35);
+        // console.log('The value of greet36 is', greet36);
+        // console.log('The value of greet37 is', greet37);
+        // console.log('The value of greet38 is', greet38);
+        // console.log('The value of greet39 is', greet39);
+    </script>
+</head>
+
+<body>
+    <h1>Quiz 5</h1>
+</body>
+
+</html>
