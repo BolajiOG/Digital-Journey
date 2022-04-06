@@ -10,7 +10,14 @@
             return this.greeting;
         }
         greet.greeting = 'Hi';
-        greet.greet = greet;
+        greet.greet = greet;      
+
+    	const greet01 = greet; // The reference to greet
+        const greet02 = greet(); // undefined
+        const greet03 = greet('Bonjour'); // undefined 
+        const greet04 = greet.greet; // The reference to greet
+        const greet05 = greet.greet(); // 'Hi'
+        const greet06 = greet.greet('Ça va'); // 'Hi'
 
         // Create a greet object.
         const greet0 = {
@@ -20,6 +27,11 @@
             }
         };
 
+        const greet11 = greet0; // The reference to greet0
+        const greet12 = greet0.greet('Bonsoir'); // 'Hey'
+        const greet13 = greet1; // The reference to greet1
+        const greet14 = greet1.greet('Bonne nuit'); // 'Yo'
+   
         // Create a greet object.
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
         const greet1 = Object.create(greet0);
@@ -37,25 +49,25 @@
         Greet.prototype.greet = function () {
             return this.greeting;
         };
+
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+        const greet21 = greet.call(greet2, 'Morning'); //
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+        const greet22 = greet.bind(greet2);
+        const greet23 = greet22('Afternoon');
+
+
         Greet.greet = function () {
             return this.greeting;
         };
 
         // QUESTION: What will be the values of these variables.
-        const greet01 = greet;
-        const greet02 = greet();
-        const greet03 = greet('Bonjour');
-        const greet04 = greet.greet;
-        const greet05 = greet.greet();
-        const greet06 = greet.greet('Ça va');
 
-        const greet11 = greet0;
-        const greet12 = greet0.greet('Bonsoir');
-        const greet13 = greet1;
-        const greet14 = greet1.greet('Bonne nuit');
+
 
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call
-        const greet21 = greet.call(greet2, 'Morning');
+        const greet21 = greet.call(greet2, 'Morning'); //
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
         const greet22 = greet.bind(greet2);
         const greet23 = greet22('Afternoon');
